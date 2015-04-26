@@ -28,6 +28,14 @@ to upload.  My script does all the other stuff, though,
 and I believe it to be correct although I think probably
 there has to be a simpler way to do some of it.
 
+I'm having trouble getting the formatting correct for the Code Book.
+I have a couple of tables that look fine in plain text but get
+completely messed up by MarkDown and I don't know how to fix it.
+I don't see anything about table formatting in the MarkDown
+documentation.  As it is, the table as rendedred by the web server
+on github looks unreadable.  It looks fine if you download the
+text and look at it as a plain ASCII file.
+
 The comments in the code (run_analysis.R) are extensive
 and I hope clear as to what I was trying to do and how
 I was trying to do it.

@@ -69,10 +69,16 @@ The complete list of variables of each feature vector is available in 'features.
 
 == Output Summary Data Code Book
 
-The result reduces to 66 feature variables, which
+The output summarizes the data as follows:
+*  for each combination of subject and activity, there is one line of data
+*  each line of data contains a list of numbers, each of which is
+   the mean of the corresponding feature variables from the original data
+   for the given subject and activity.
+
+The data of interest contains 66 feature variables, which
 can be grouped into 2 sets:
-- one set of X, Y, Z coordinate values, and
-- one set that is not broken down into coordinates
+* one set of X, Y, Z coordinate values, and
+* one set that is not broken down into coordinates
 
 The items are as follows.
 Entries in the table are the
@@ -94,8 +100,9 @@ fBodyGyro      V424 V425 V426   V427 V428 V429
 
 Non-coordinate group, 2 * 9 == 18 variables
 
-feature              mean()     std()
--------            --------    ------
+feature
+variable             mean()     std()
+---------          --------    ------
 tBodyAccMag          V201       V202
 tGravityAccMag       V214       V215
 tBodyAccJerkMag      V227       V228
@@ -105,3 +112,28 @@ fBodyAccMag          V503       V504
 fBodyAccJerkMag      V516       V517
 fBodyGyroMag         V529       V530
 fBodyGyroJerkMag     V542       V543
+
+The columns of the output are named from these tables
+according to the following scheme:
+
+In the "coordinate group", names are constructed
+by taking the feature variable name and appending it
+with "mean" or "std" and then "X", "Y", or "Z",
+and using "_" as a separator.
+
+Thus for example we have
+   tBodyAcc_mean_X, which comes from column 1 of the original data
+   tBodyAcc_mean_Y, which comes from column 2 of the original data
+... etc
+
+In the "non-coordinate group", there are no X,Y,Z coordinates
+but just a magnitude, so instead of having 6 values for each
+type of data there are just 2 -- the mean and the standard deviation.
+
+Thus for example we have
+   tBodyAccMag_mean   taken from column 201 of the original data
+   tBodyAccMag_std    taken from column 202 of the original data.
+
+(See the tables for the full mapping from measurements
+to original data columns.)
+
